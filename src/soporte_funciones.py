@@ -82,3 +82,37 @@ def espacios_guion_bajo(df):
     # Convertir nombres de columnas a minúsculas y reemplazar espacios por guiones bajos
     df.columns = [col.lower().replace(" ", "_") for col in df.columns]
     return df
+
+## Función para convertir a numero entero: 
+
+
+def entero(df, columna):
+    """
+    Convierte una columna específica de un DataFrame a tipo entero (si la columna está presente). 
+
+    Si no está, devuelve el mensaje indicando eso
+    
+    """
+    # Comprobar si la columna existe en el DataFrame
+    if columna in df.columns:
+        # Convertir la columna a tipo entero (permitiendo valores nulos con 'Int64')
+        df[columna] = df[columna].astype('Int64')
+        print(f'Columna "{columna}" convertida a enteros.')
+    else:
+        print(f'La columna "{columna}" no se encuentra en el DataFrame.')
+    
+    return df
+
+
+
+## Función para convertir a numero entero: 
+
+
+def dos_decimales(df, col):
+    """
+    Cambia los decimales de los valores float a dos decimales en una columna del DataFrame. 
+    """
+    # Redondear los valores de la columna especificada a 2 decimales
+    df[col] = df[col].round(2)
+    
+    return df
