@@ -22,7 +22,11 @@ El proyecto utiliza dos archivos CSV que describen el comportamiento de los clie
 
 ## Estructura del Proyecto
 
-**************
+- Carpeta 'Files': contiene los CSVs con los datos utilizados para el análisis, el CSV de las filas duplicadas que se eliminaron y el CSV con los datos finales, luego del filtrado y la limpieza. 
+- Carpeta 'src': contiene el archivo py de soporte de funciones que se utilizaron en el archivo principal de la evaluación. 
+- Archivo 'fase_1_2': contiene el análisis exploratorio y la transformación y limpieza de datos. 
+- Archivo 'fase_3': incluye el análisis descriptivo, análisis estadístico y AB testing. 
+- Archivo main: archivo py. No utilizado en este proyecto ya que se utilizó un archivo Jupyter para el análisis. 
 
 ## Fases del Proyecto
 
@@ -61,7 +65,7 @@ Realizamos una prueba de hipótesis para determinar si existen diferencias signi
 
 Pandas se utilizó para la limpieza, transformación y análisis de los datos.
 Matplotlib y Seaborn se emplearon para la visualización de las tendencias y patrones en los datos.
-**** ???????? SciPy se utilizó para realizar pruebas estadísticas (test A/B) y análisis inferencial.
+SciPy se utilizó para realizar pruebas estadísticas (test A/B) y análisis inferencial.
 
 
 ## Requisitos

@@ -4,6 +4,12 @@
 import pandas as pd
 import os
 import sys
+from scipy import stats
+from scipy.stats import shapiro, levene
+from scipy.stats import ttest_ind
+from scipy.stats import mannwhitneyu
+from scipy.stats import chi2_contingency
+import seaborn as sns
 #from IPython.display import display
 
 ## Funciones EDA y transformación de datos: 
@@ -116,3 +122,55 @@ def dos_decimales(df, col):
     df[col] = df[col].round(2)
     
     return df
+
+
+## FUNCIONES AB TESTING. 
+
+def normalidad(dataframe, columna):
+    """
+    Evalúa la normalidad de una columna de datos de un DataFrame utilizando la prueba de Shapiro-Wilk.
+
+    Parámetros:
+        dataframe (DataFrame): El DataFrame que contiene los datos.
+        columna (str): El nombre de la columna en el DataFrame que se va a evaluar para la normalidad.
+
+    Returns:
+        None: Imprime un mensaje indicando si los datos siguen o no una distribución normal.
+    """
+
+    statistic, p_value = stats.shapiro(dataframe[columna])
+    if p_value > 0.05:
+        print(f"Para la columna {columna} los datos siguen una distribución normal.")
+    else:
+        print(f"Para la columna {columna} los datos no siguen una distribución normal.")
+
+
+# vamos a definir una función para poder hacer el t-test de Student
+
+def prueba_hipotesis(*args):
+    
+    # lo primero que tenemos que hacer es mirar si las varianzas son iguales o no
+    if len(args) == 2:
+        p_valor_varianza = stats.levene(*args, center = "median")[1]
+    else:
+        p_valor_varianza = stats.bartlett(*args)[1]
+    
+    if p_valor_varianza > 0.05:
+        # realizamos la prueba t de Student
+        t_stat, p_valor = stats.ttest_ind(*args, equal_var=True)
+    else:
+        t_stat, p_valor = stats.ttest_ind(*args, equal_var=False)
+        
+    # Establecemos un nivel de significancia (alfa)
+    alfa = 0.05
+
+    # comparamos el p-valor con el nivel de significancia
+    if p_valor < alfa:
+        print("Rechazamos la hipótesis nula.")
+        print("Hay una diferencia significativa en la variable analizada entre los dos grupos.")
+    else:
+        print("No podemos rechazar la hipótesis nula.")
+        print("No hay evidencia suficiente para afirmar una diferencia significativa en la variable analizada entre los dos grupos.")
+
+
+
