@@ -1,88 +1,74 @@
+# 📊 Final Evaluation – Module 3: Data Transformation & Statistical Analysis
 
-# Evaluación Módulo 3: Transformación de Datos
+This project is the **final evaluation for Module 3** of the Adalab Data Analytics Bootcamp.  
+The goal is to apply **data cleaning, transformation, visualization,** and **statistical analysis** techniques using customer data from an airline's loyalty program.
 
+---
 
-## Descripción
-Este proyecto corresponde a la evaluación final del Módulo 3 del curso de Adalab de Análisis de Datos. El objetivo principal es aplicar técnicas de transformación, limpieza y visualización de datos sobre un conjunto de datos relacionados con el comportamiento de los clientes dentro de un programa de lealtad de una aerolínea. Utilizamos herramientas de Pandas, Matplotlib, Seaborn y SciPy para analizar los datos.
+## 🎯 Objectives
 
-## Objetivo
-- Exploración y limpieza de datos: Identificar y tratar valores nulos, atípicos o inconsistentes.
-- Transformación de datos: Crear nuevas columnas, agrupar o filtrar información según sea necesario.
-- Análisis de datos: Explorar patrones y tendencias en los datos.
-- Visualización de datos: Crear gráficos para comunicar los hallazgos.
-- Evaluación de diferencias en reservas de vuelos según el nivel educativo.
+- Explore and clean raw data (missing values, outliers, duplicates)
+- Transform variables, filter/group data, and derive new columns
+- Create meaningful visualizations to detect trends and relationships
+- Perform statistical tests (hypothesis testing)
+- Compare flight booking patterns by education level
 
-## Datos
-El proyecto utiliza dos archivos CSV que describen el comportamiento de los clientes dentro del programa de lealtad de la aerolínea:
+---
 
-1) Customer Flight Analysis.csv: Información sobre la actividad de vuelo de los clientes, incluyendo el número de vuelos, distancia volada, puntos acumulados y redimidos, y costos asociados a los puntos redimidos.
+## 📁 Dataset Overview
 
-2) Customer Loyalty History.csv: Información detallada sobre el perfil de los clientes, como su ubicación, nivel educativo, ingresos, estado civil, tipo de tarjeta de lealtad y más.
+The analysis uses two CSV files:
 
+1. `Customer_Flight_Analysis.csv`  
+   Includes flight activity, distances, loyalty points, and costs.
 
-## Estructura del Proyecto
+2. `Customer_Loyalty_History.csv`  
+   Contains customer demographics, education, income, card type, and more.
 
-- Carpeta 'Files': contiene los CSVs con los datos utilizados para el análisis, el CSV de las filas duplicadas que se eliminaron y el CSV con los datos finales, luego del filtrado y la limpieza. 
-- Carpeta 'src': contiene el archivo py de soporte de funciones que se utilizaron en el archivo principal de la evaluación. 
-- Archivo 'fase_1_2': contiene el análisis exploratorio y la transformación y limpieza de datos. 
-- Archivo 'fase_3': incluye el análisis descriptivo, análisis estadístico y AB testing. 
-- Archivo main: archivo py. No utilizado en este proyecto ya que se utilizó un archivo Jupyter para el análisis. 
+---
 
-## Fases del Proyecto
+## 🧱 Project Structure
 
-###  Fase 1: Exploración y Limpieza de Datos
+| File/Folder         | Description                                                 |
+|---------------------|-------------------------------------------------------------|
+| `Files/`            | Raw and cleaned datasets, duplicates removed                |
+| `src/`              | Supporting Python functions used in the notebooks           |
+| `fase_1_2.ipynb`    | Data cleaning, transformation, and exploratory analysis     |
+| `fase_3.ipynb`      | Statistical analysis and A/B testing                        |
+| `main.py`           | Not used in this project (main work in Jupyter notebooks)   |
 
-Exploración Inicial:
+---
 
-- Inspección de los datos para identificar valores nulos, atípicos y la estructura de los datos.
-- Análisis de la distribución de los datos y las estadísticas descriptivas para entender su naturaleza.
+## 🔍 Project Phases
 
-Limpieza de Datos:
+### 📂 Phase 1: Data Exploration & Cleaning
 
-- Tratamiento y eliminación de valores nulos en las columnas clave.
-- Verificación de la consistencia de los datos (tipos de datos, rangos válidos, etc.).
-- Conversión de los tipos de datos necesarios para el análisis.
+- Initial inspection and assessment of nulls, outliers, data types
+- Column transformations and consistent formatting
+- Final cleaned dataset for analysis
 
-### Fase 2: Visualización de Datos
+### 📊 Phase 2: Visualization
 
-Utilizando herramientas de visualización con Matplotlib y Seaborn, se generaron las siguientes visualizaciones:
+Visualizations created using **Matplotlib** and **Seaborn**:
 
-1) Distribución de la cantidad de vuelos reservados por mes.
-2) Relación entre la distancia de los vuelos y los puntos acumulados.
-3) Distribución de los clientes por provincia o estado.
-4) Comparación del salario promedio entre los diferentes niveles educativos.
-5) Proporción de clientes con diferentes tipos de tarjetas de fidelidad.
-6) Distribución de los clientes según su estado civil y género.
+- Monthly flight booking distribution
+- Relationship between distance and earned points
+- Salary comparison by education level
+- Customer segmentation by marital status, gender, and card type
 
-###  Fase 3: Análisis de Diferencias en Reservas de Vuelos por Nivel Educativo
+### 🧪 Phase 3: Statistical Testing
 
-Filtramos el conjunto de datos para trabajar solo con las columnas relevantes: Flights Booked y Education.
-Agrupamos los datos por nivel educativo y calculamos estadísticas descriptivas como el promedio y la desviación estándar del número de vuelos reservados.
-Realizamos una prueba de hipótesis para determinar si existen diferencias significativas en el número de vuelos reservados según el nivel educativo.
+- Grouped data by education level and flight bookings
+- Calculated descriptive statistics (mean, std dev)
+- Performed hypothesis testing to detect significant differences (A/B test)
 
+---
 
-## Metodología
+## 🛠 Tools & Libraries
 
-Pandas se utilizó para la limpieza, transformación y análisis de los datos.
-Matplotlib y Seaborn se emplearon para la visualización de las tendencias y patrones en los datos.
-SciPy se utilizó para realizar pruebas estadísticas (test A/B) y análisis inferencial.
+- **Python 3.x**
+- **Pandas** – data cleaning and transformation
+- **Matplotlib & Seaborn** – data visualization
+- **SciPy** – hypothesis testing and inferential statistics
 
-
-## Requisitos
-
-- Python 3.x
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- SciPy (para análisis estadísticos)
-
-
-
-
-
-
-
-
-
-
+---
